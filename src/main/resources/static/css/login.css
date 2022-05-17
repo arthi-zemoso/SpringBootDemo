@@ -1,0 +1,60 @@
+span a
+{
+           padding-top:10px;
+           padding-right: 10px;
+           padding-bottom: 10px;
+           padding-left: 10px;
+           border-style: solid;
+
+           border: 2px solid black;
+}
+
+.login h2
+{
+       text-align: center;
+
+       opacity: 1;
+       padding-top: 60px;
+       padding-right: 60px;
+       padding-bottom: 10px;
+       padding-left: 60px;
+}
+.login2 a
+{
+       text-align: center;
+       opacity: 1;
+       padding-right: 60px;
+       padding-bottom: 20px;
+       padding-left: 60px;
+}
+.login2
+{
+      margin-top:20px;
+      margin-bottom: 50px;
+      margin-right: 100px;
+}
+.login3
+{
+      margin-top:20px;
+      margin-bottom: 50px;
+      margin-right: 100px;
+}
+.login3 a
+{
+       text-align: center;
+
+       opacity: 1;
+       padding-top: 20px;
+       padding-right: 60px;
+       padding-bottom: 20px;
+       padding-left: 60px;
+}
+.logout
+{
+       text-align: center;
+}
+.logout input
+{
+       text-transform: uppercase;
+       font-size:large ;
+}

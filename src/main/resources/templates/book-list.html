@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:security="http://www.w3.org/1999/xhtml"
+      xmlns:sec="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+    <title>Books List</title>
+</head>
+<body>
+<div class="container">
+    <h3>Book Directory</h3>
+    <hr>
+    <a th:href="@{/addBookForm}"
+       class="btn btn-primary btn-sm mb-3">
+        Add Book
+    </a>
+    <table class="table table-bordered table-striped">
+    <thead class="thead-dark">
+    <tr>
+        <th> <u> Book Name </u> </th>
+        <th> <u> Book Price  </u> </th>
+        <th> <u> Genre  </u> </th>
+        <th sec:authorize="hasRole('ROLE_ADMIN')"> <u> Actions </u> </th>
+    </tr>
+    </thead>
+
+    <tbody>
+    <th:block  th:each="tempBook:${theBookList}">
+        <tr>
+            <td th:text="${tempBook.bookName}">  </td>
+            <td th:text="${tempBook.bookPrice}">  </td>
+            <td th:text="${tempBook.genre}">  </td>
+
+            <td sec:authorize="hasRole('ROLE_ADMIN')"> <a th:href="@{/bookUpdate(customerId=${tempBook.bookId})}"  class="btn btn-info btn-sm" > Update   </a>   </td>
+
+            <td sec:authorize="hasRole('ROLE_ADMIN')"> <a th:href="@{/bookDelete(customerId=${tempBook.bookId})}"  class="btn btn-danger btn-sm"
+                                                          onclick="if (!(confirm('Are you sure want to delete this Book ?'))) return false">
+                Delete   </a>   </td>
+        </tr>
+
+    </th:block>
+
+
+    </tbody>
+</table>
+</div>
+</body>
+</html>

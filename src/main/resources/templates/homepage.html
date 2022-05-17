@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:security="http://www.w3.org/1999/xhtml"
+      xmlns:sec="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Homepage</title>
+    <link rel="stylesheet"
+          th:href="@{/css/login.css}">
+</head>
+
+<body>
+<div class="login">
+    <h2>    <u>WELCOME TO THE ONLINE BOOK STORE </u>   </h2>
+    <br><br>
+</div>
+
+<div class="login2">
+    <a href="/showCustomerList"><b>Click here to view Customer List</b>   </a>
+</div>
+
+<div class="login3">
+    <a href="/showBookList"><b>Click here to view the Books List</b>   </a>
+</div>
+
+<!--
+<div class="login3" sec:authorize="hasRole('ROLE_ADMIN')">
+    <a href="/addCustomerForm"><b>Click here to Register a new User  </b>   </a>
+</div>
+
+<div class="login3" sec:authorize="hasRole('ROLE_ADMIN')">
+    <a href="/addBookForm"><b>Click here to Register a New Book </b>   </a>
+</div>
+-->
+
+
+<div class="logout">
+    <form th:action="@{/logout}">
+        <input type="submit" value="Logout">
+    </form>
+</div>
+</body>
+</html>
